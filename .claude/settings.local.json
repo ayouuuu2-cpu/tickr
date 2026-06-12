@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/w.wyixin/Desktop/**)",
+      "Bash(npx create-next-app@latest tickr --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\")"
+    ]
+  }
+}
