@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tickr
 
-## Getting Started
+AI-powered stock tracker for global markets. Built with Next.js + Claude API.
 
-First, run the development server:
+**Live:** https://tickr-lovat.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![screenshot](screenshot.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What it does
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Real-time quotes via Finnhub API
+- Candlestick / line charts via Yahoo Finance  
+- Today's news aggregation via NewsAPI
+- AI market analysis powered by Claude API (based on today's news)
+- Watchlist management with mobile-responsive Apple-style UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+Next.js · TypeScript · Finnhub API · Yahoo Finance · NewsAPI · Claude API · Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## Why I built this
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Existing stock apps show data but don't synthesize it. Tickr combines real-time prices, today's news, and AI interpretation in one place — designed with an Apple-style dual-panel UI for clarity and built entirely independently from product definition to deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Architecture
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Finnhub (real-time quotes) + NewsAPI (news) + Yahoo Finance (candlestick) → Next.js API Routes (server-side proxy, CORS handling, 5-min cache) → Claude API (AI analysis) → Client
